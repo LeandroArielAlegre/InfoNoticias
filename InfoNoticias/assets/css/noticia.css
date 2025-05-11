@@ -1,0 +1,23 @@
+*{  
+    font-family: sans-serif;
+}
+
+
+.contendedor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 2px 1px 0px black;
+    border-radius: 10px;
+    flex-direction: column;
+
+}
+
+
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}

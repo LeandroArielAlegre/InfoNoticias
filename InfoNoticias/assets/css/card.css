@@ -1,10 +1,10 @@
 
 .card {
-    width: 500px;
+    width: 400px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 16px;
     padding: 1.5rem;
-    color: #fff;
+    color: #ffffff;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     overflow: hidden;
     text-align: center;
@@ -19,7 +19,7 @@
 
 
 .card img {
-    width: 50%;
+    width: 80%;
     height: auto;
 }
 
@@ -27,13 +27,13 @@
 .card h2 {
     font-size: 22px;
     margin: 15px 0;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 
 .card p {
     font-size: 16px;
-    color: white;
+    color: rgb(0, 0, 0);
     padding: 0 15px;
 }
 

@@ -1,15 +1,39 @@
-$(document).ready(function(){
-    
 
-    for (let index = 0; index < 10;  index++) {
-        $(".listadoNoticias").append(`
-        <div class="card">
-            <img src="" alt="imagen de la noticia">
-            <h2>MATAN A 2 PERSONAS Y 1 BOLIVIANO</h2>
-            <p>Descripción de la noticia</p>
-        </div>
-        `)
-    }
-
+$(document).ready(function(){ 
+    leerJson();
 })
+
+
+
+function leerJson(){
+    $.getJSON("assets/resources/data/noticias.json", function(data){
+        const noticias = data.noticias;
+        colocarNoticias(noticias)
+    })
+}
+
+
+function colocarNoticias(noticias){
+     const listadoNoticias = $(".listadoNoticias");
+    noticias.forEach(noticia => {
+       const card = 
+        $("<div class='card'>").html(`
+            <img src="assets/resources/image/img1.png" alt="imagen de la noticia">
+            <h2>${noticia.titulo}</h2>
+            <p>${noticia.descripcion}</p>
+            <button class="boton">Leer más</button>
+        `);
+        card.find(".boton").click(() => redirigirYGuardarNoticiaEnLocalStorage(noticia));
+        listadoNoticias.append(card);
+    });
+
+}
+
+
+function redirigirYGuardarNoticiaEnLocalStorage(noticia){
+    localStorage.setItem("noticia", JSON.stringify(noticia));
+    window.location.href = "/assets/pages/noticia.html";
+}
+
+
 
