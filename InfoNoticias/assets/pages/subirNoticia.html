@@ -3,33 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-<<<<<<< Updated upstream
-    <title>Subir noticia</title>
-</head>
-
-<body>
-    <h1>Subir nueva noticia:</h1>
-    <form id="userForm">
-        <label>
-            Título: <input type="text" name="titulo" required>
-        </label><br><br>
-        <label>
-            Descripción: <input type="text" name="descripcion" required>
-        </label><br><br>
-        <label>
-            Cuerpo: <input type="text" name="cuerpo" min="0">
-        </label><br><br>
-        <label>
-            Dirección: <input type="text" name="direccion" min="0">
-        </label><br><br>
-        <button type="submit">Submit</button>
-    </form>
-
-    <script>
-        document.getElementById('userForm').addEventListener('submit', async function (e) {
-            e.preventDefault();
-            const formData = new FormData(e.target);
-=======
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../..//assets/css/noticia.css">
     <link rel="stylesheet" href="../..//assets/css/nav.css">
@@ -86,53 +59,6 @@
 
         </div>
 
->>>>>>> Stashed changes
-
-            sessionStorage.setItem('titulo', formData.get('titulo'));
-            sessionStorage.setItem('descripcion', formData.get('descripcion'));
-            sessionStorage.setItem('cuerpo', formData.get('cuerpo'));
-
-            const direccionSolicitada = formData.get('direccion');
-
-            // queremos agregar una direccion?
-            if (direccionSolicitada.trim != "") {
-                const requestURL = 'https://servicios.usig.buenosaires.gob.ar/normalizar/?direccion=' + direccionSolicitada;
-
-                try {
-                    const response = await fetch(requestURL);
-                    if (!response.ok) throw new Error('Network response was not ok');
-
-                    const data = await response.json();
-                    const resultados = data.direccionesNormalizadas;
-
-                    if (resultados.length == 0) {
-                        alert('No se encontraron resultados. Revise la dirección e intente nuevamente');
-                    }
-
-                    if (resultados.length === 1) {
-                        // Se encontro una sola. Genial
-                        sessionStorage.setItem('hayDireccion', true);
-                        sessionStorage.setItem('direccionNorm', resultados[0].direccion);
-                        sessionStorage.setItem('coordX', resultados[0].coordenadas.x);
-                        sessionStorage.setItem('coordY', resultados[0].coordenadas.y);
-                        const direccionNorm = resultados[0].direccion;
-                        const coordX = resultados[0].coordenadas.x;
-                        const coordY = resultados[0].coordenadas.y;
-                    } else {
-                        // Zero or more than one result → show error message
-                        alert('Se encontraron ' + resultados.length + ' direcciones. Por favor, intente ser más específico.');
-                    }
-                } catch (error) {
-                    console.error('Fetch error:', error);
-                    alert('Error al obtener la dirección. Por favor, intente más tarde.');
-                }
-            }
-            else{
-                sessionStorage.setItem(hayDireccion, false);
-            }
-            window.location.href = 'report.html'
-        });
-    </script>
 </body>
 
 </html>
