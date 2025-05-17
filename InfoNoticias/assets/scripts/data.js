@@ -1,7 +1,6 @@
-{
-  "noticias": [
-    {
-      "titulo": "Descubren nueva especie de ave en la Amazonía",
+const diccionarioNoticias = {
+"1":{
+     "titulo": "Descubren nueva especie de ave en la Amazonía",
       "tema": "Ciencia",
       "autor": "Lucía Méndez",
       "fecha": "2025-05-10",
@@ -9,8 +8,8 @@
       "cuerpo": "El hallazgo fue realizado por investigadores locales que estudiaban la biodiversidad de la región. La nueva especie ha sido nombrada *Pipra amazónica* y destaca por su canto peculiar y plumaje vibrante.",
       "fotos": ["/assets/resources/noticiaImagen1.jpg", "/assets/resources/noticiaImagen2.jpg"],
       "direccion": "Amazonía, Perú"
-    },
-    {
+},
+"2":{
       "titulo": "Avances en la energía solar en el norte de Chile",
       "tema": "Tecnología",
       "autor": "Carlos Rivas",
@@ -19,8 +18,8 @@
       "cuerpo": "El proyecto 'Atacama Solar' ha superado las expectativas de producción energética, logrando abastecer a más de 500 mil hogares.",
       "fotos": ["/assets/resources/noticiaImagen3.jpg", "/assets/resources/noticiaImagen4.jpg"],
       "direccion": "Desierto de Atacama, Chile"
-    },
-    {
+},
+"3":{
       "titulo": "Inauguran nueva línea de metro en Buenos Aires",
       "tema": "Infraestructura",
       "autor": "María Fernández",
@@ -29,8 +28,9 @@
       "cuerpo": "Con una inversión superior a los 500 millones de dólares, la nueva línea busca reducir la congestión vehicular y mejorar la movilidad urbana.",
       "fotos": ["/assets/resources/noticiaImagen5.jpg", "/assets/resources/noticiaImagen6.jpg"],
       "direccion": "Buenos Aires, Argentina"
-    },
-    {
+      
+},
+"4":{
       "titulo": "España elimina el uso de plásticos de un solo uso",
       "tema": "Medio Ambiente",
       "autor": "Laura Gómez",
@@ -39,9 +39,10 @@
       "cuerpo": "La normativa contempla sanciones para quienes incumplan y promueve el uso de materiales biodegradables y reciclables.",
       "fotos": ["/assets/resources/noticiaImagen7.jpg", "/assets/resources/noticiaImagen8.jpg"],
       "direccion": "Madrid, España"
-    },
-    {
-      "titulo": "NASA lanza satélite para estudiar clima extremo",
+      
+},
+"5":{
+       "titulo": "NASA lanza satélite para estudiar clima extremo",
       "tema": "Espacio",
       "autor": "Juan Martínez",
       "fecha": "2025-05-06",
@@ -49,8 +50,9 @@
       "cuerpo": "La misión busca mejorar los modelos meteorológicos y prever eventos climáticos severos con mayor precisión.",
       "fotos": ["/assets/resources/noticiaImagen9.jpg", "/assets/resources/noticiaImagen10.jpg"],
       "direccion": "Cabo Cañaveral, EE.UU."
-    },
-    {
+      
+},
+"6":{
       "titulo": "Se celebra el Festival Internacional del Cine Independiente",
       "tema": "Cultura",
       "autor": "Elena Vázquez",
@@ -59,9 +61,10 @@
       "cuerpo": "El festival premió a las mejores producciones emergentes y abrió espacios de formación y diálogo entre creadores.",
       "fotos": ["/assets/resources/noticiaImagen11.jpg", "/assets/resources/noticiaImagen12.jpg"],
       "direccion": "Ciudad de México, México"
-    },
-    {
-      "titulo": "Se registra aumento de temperaturas en el hemisferio norte",
+      
+},
+"7":{
+       "titulo": "Se registra aumento de temperaturas en el hemisferio norte",
       "tema": "Clima",
       "autor": "Andrés Navarro",
       "fecha": "2025-05-04",
@@ -69,9 +72,10 @@
       "cuerpo": "Expertos alertan sobre el impacto de las olas de calor y recomiendan medidas preventivas.",
       "fotos": ["/assets/resources/noticiaImagen13.jpg", "/assets/resources/noticiaImagen14.jpg"],
       "direccion": "Toronto, Canadá"
-    },
-    {
-      "titulo": "Argentina gana el Sudamericano Sub-20 de fútbol",
+      
+},
+"8":{
+       "titulo": "Argentina gana el Sudamericano Sub-20 de fútbol",
       "tema": "Deportes",
       "autor": "Federico López",
       "fecha": "2025-05-03",
@@ -79,8 +83,9 @@
       "cuerpo": "Con un marcador de 3-2, el equipo juvenil mostró talento y disciplina, destacando la figura de su capitán.",
       "fotos": ["/assets/resources/noticiaImagen15.jpg", "/assets/resources/noticiaImagen16.jpg"],
       "direccion": "Montevideo, Uruguay"
-    },
-    {
+      
+},
+"9":{
       "titulo": "Lanzan aplicación para monitorear calidad del aire",
       "tema": "Salud",
       "autor": "Verónica Díaz",
@@ -89,9 +94,10 @@
       "cuerpo": "Desarrollada por científicos en conjunto con el Ministerio de Salud, busca concientizar a la población sobre los efectos de la polución.",
       "fotos": ["/assets/resources/noticiaImagen17.jpg", "/assets/resources/noticiaImagen18.jpg"],
       "direccion": "Bogotá, Colombia"
-    },
-    {
-      "titulo": "Detectan nueva vulnerabilidad en dispositivos Android",
+      
+},
+"10":{
+          "titulo": "Detectan nueva vulnerabilidad en dispositivos Android",
       "tema": "Ciberseguridad",
       "autor": "David Ramírez",
       "fecha": "2025-05-01",
@@ -99,9 +105,10 @@
       "cuerpo": "La vulnerabilidad permite el acceso no autorizado a información sensible. Google ha prometido una actualización en los próximos días.",
       "fotos": ["/assets/resources/noticiaImagen19.jpg", "/assets/resources/noticiaImagen20.jpg"],
       "direccion": "San Francisco, EE.UU."
-    },
-    {
-      "titulo": "Crece la inversión extranjera en energías renovables",
+      
+},
+"11":{
+           "titulo": "Crece la inversión extranjera en energías renovables",
       "tema": "Economía",
       "autor": "Natalia Ruiz",
       "fecha": "2025-04-30",
@@ -109,9 +116,10 @@
       "cuerpo": "Los países de la región ofrecen incentivos fiscales y recursos naturales que hacen atractiva la inversión en energía limpia.",
       "fotos": ["/assets/resources/noticiaImagen21.jpg", "/assets/resources/noticiaImagen22.jpg"],
       "direccion": "Santiago, Chile"
-    },
-    {
-      "titulo": "Lanzan programa de alfabetización digital para adultos mayores",
+      
+},
+"12":{
+        "titulo": "Lanzan programa de alfabetización digital para adultos mayores",
       "tema": "Educación",
       "autor": "Ricardo Paredes",
       "fecha": "2025-04-29",
@@ -119,8 +127,9 @@
       "cuerpo": "Se impartirán talleres gratuitos sobre uso de dispositivos, Internet y redes sociales.",
       "fotos": ["/assets/resources/noticiaImagen23.jpg", "/assets/resources/noticiaImagen24.jpg"],
       "direccion": "Quito, Ecuador"
-    },
-    {
+      
+},
+"13":{
       "titulo": "Hallan restos arqueológicos en las afueras de Cusco",
       "tema": "Historia",
       "autor": "Silvia Rojas",
@@ -129,9 +138,10 @@
       "cuerpo": "Los restos se encuentran en excelente estado y se cree que pertenecen a una cultura anterior a los incas.",
       "fotos": ["/assets/resources/noticiaImagen25.jpg", "/assets/resources/noticiaImagen26.jpg"],
       "direccion": "Cusco, Perú"
-    },
-    {
-      "titulo": "Desarrollan vacuna contra nueva cepa de gripe aviar",
+      
+},
+"14":{
+       "titulo": "Desarrollan vacuna contra nueva cepa de gripe aviar",
       "tema": "Salud",
       "autor": "Miguel Vargas",
       "fecha": "2025-04-27",
@@ -139,9 +149,11 @@
       "cuerpo": "El Instituto Nacional de Salud ha confirmado que la vacuna será producida a gran escala durante los próximos meses.",
       "fotos": ["/assets/resources/noticiaImagen27.jpg", "/assets/resources/noticiaImagen28.jpg"],
       "direccion": "Buenos Aires, Argentina"
-    },
-    {
-      "titulo": "Crece la producción de vehículos eléctricos en Brasil",
+
+      
+},
+"15":{
+                  "titulo": "Crece la producción de vehículos eléctricos en Brasil",
       "tema": "Industria",
       "autor": "Ana Pereira",
       "fecha": "2025-04-26",
@@ -149,6 +161,7 @@
       "cuerpo": "El gobierno ha lanzado una serie de incentivos para fomentar la industria automotriz verde, atrayendo inversiones extranjeras.",
       "fotos": ["/assets/resources/noticiaImagen29.jpg", "/assets/resources/noticiaImagen30.jpg"],
       "direccion": "São Paulo, Brasil"
-    }
-  ]
 }
+
+};
+const noticiaArray = Object.values(diccionarioNoticias);

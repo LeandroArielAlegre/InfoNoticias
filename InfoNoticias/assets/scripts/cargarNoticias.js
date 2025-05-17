@@ -6,16 +6,15 @@ $(document).ready(function(){
 
 
 function leerJson(){
-    $.getJSON("assets/resources/data/noticias.json", function(data){
-        const noticias = data.noticias;
-        colocarNoticias(noticias)
-    })
+     const noticias = Object.entries(diccionarioNoticias);
+     colocarNoticias(noticias)
+    
 }
 
 
 function colocarNoticias(noticias){
      const listadoNoticias = $(".listadoNoticias");
-    noticias.forEach(noticia => {
+    noticias.forEach(([id,noticia]) => {
        const card = 
         $("<div class='card'>").html(`
             <img src="assets/resources/image/img1.png" alt="imagen de la noticia">
@@ -32,7 +31,7 @@ function colocarNoticias(noticias){
 
 function redirigirYGuardarNoticiaEnLocalStorage(noticia){
     localStorage.setItem("noticia", JSON.stringify(noticia));
-    window.location.href = "/assets/pages/noticia.html";
+    window.location.href = "assets/pages/noticia.html";
 }
 
 

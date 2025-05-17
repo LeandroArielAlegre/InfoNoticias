@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+<<<<<<< Updated upstream
     <title>Subir noticia</title>
 </head>
 
@@ -28,6 +29,64 @@
         document.getElementById('userForm').addEventListener('submit', async function (e) {
             e.preventDefault();
             const formData = new FormData(e.target);
+=======
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../..//assets/css/noticia.css">
+    <link rel="stylesheet" href="../..//assets/css/nav.css">
+    <link rel="stylesheet" href="../../assets/css/formulario.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="../../assets/scripts/data.js"></script>
+    <script src="../../assets/scripts/subirNoticia.js"></script>
+
+    <title>Formulario de noticia</title>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="../../index.html">Inicio</a></li>
+            <li><a href="../../assets/pages/subirNoticia.html">Subir noticia</a></li>
+        </ul>
+
+    </nav>
+    <div class="contendedor">
+
+        <div class="registrarNoticia">
+            <form id="registrarNoticia">
+                <h1>Formulario de noticia</h1>
+                <input type="text" id="tituloNoticia" required name="tituloNoticia" placeholder="Titulo de la noticia">
+                <input type="text" id="temaNoticia" required name="temaNoticia" placeholder="Tema de la noticia">
+                <input type="text" id="autorNoticia" required name="autorNoticia" placeholder="Autor de la noticia">
+                <input type="text" id="fechaNoticia" required name="fechaNoticia" placeholder="Fecha de la noticia">
+                <textarea class="textareaDescripcion" id="descripcionNoticia" required name="descripcionNoticia"
+                    placeholder="Descripcion de la noticia"></textarea>
+                <textarea class="textareaCuerpo" id="cuerpoNoticia" required name="cuerpoNoticia"
+                    placeholder="Informacion de la noticia"></textarea>
+                <input type="text" id="imagenNoticia" placeholder="Imagenes de la noticia">
+                <label><input type="checkbox" name="existeDireccion" value="1"> ¿Tienes una direccion?</label>
+                <br>
+                <input type="text" id="direccionNormalizadaNoticia" name="direccionNormalizadaNoticia" placeholder="Direccion normalizada de la noticia" style="display:none;">
+                <input type="submit" value="Registrar">
+            </form>
+
+              <form id="buscarDireccion">
+                    <div class="direccionNoticia" style="display: none;">
+                        <input type="text" id="calleNoticia" required name="calleNoticia" placeholder="Calle">
+                        <input type="text" id="alturaNoticia" required name="alturaNoticia" placeholder="Altura">
+                        <input type="submit" value="Buscar">
+                    </div>
+                </form>
+
+                <div class="direcciones">
+                  <!-- <li><button type="button" class="boton-opcion">Cras justo odio</button></li>-->
+                    
+                </div>
+
+
+
+        </div>
+
+>>>>>>> Stashed changes
 
             sessionStorage.setItem('titulo', formData.get('titulo'));
             sessionStorage.setItem('descripcion', formData.get('descripcion'));
