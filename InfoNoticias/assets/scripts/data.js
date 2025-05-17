@@ -1,167 +1,155 @@
 const diccionarioNoticias = {
-"1":{
-     "titulo": "Descubren nueva especie de ave en la Amazonía",
-      "tema": "Ciencia",
-      "autor": "Lucía Méndez",
-      "fecha": "2025-05-10",
-      "descripcion": "Un equipo de biólogos halló una nueva especie de ave en la selva peruana.",
-      "cuerpo": "El hallazgo fue realizado por investigadores locales que estudiaban la biodiversidad de la región. La nueva especie ha sido nombrada *Pipra amazónica* y destaca por su canto peculiar y plumaje vibrante.",
-      "fotos": ["/assets/resources/noticiaImagen1.jpg", "/assets/resources/noticiaImagen2.jpg"],
-      "direccion": "Amazonía, Perú"
+"1": {
+  "titulo": "Vecinos descubren un mural histórico en San Miguel",
+  "tema": "Cultura",
+  "autor": "Lucía Méndez",
+  "fecha": "2025-05-10",
+  "descripcion": "Durante refacciones en una casa antigua del centro, se halló un mural del siglo XIX.",
+  "cuerpo": "El hallazgo ocurrió en una vivienda de la zona céntrica de San Miguel. El mural representa escenas de la vida cotidiana de la época y será conservado por especialistas locales.",
+  "fotos": [""],
+  "direccionNormalizada": ""
 },
-"2":{
-      "titulo": "Avances en la energía solar en el norte de Chile",
-      "tema": "Tecnología",
-      "autor": "Carlos Rivas",
-      "fecha": "2025-05-09",
-      "descripcion": "Chile se posiciona como líder en energía solar en Latinoamérica.",
-      "cuerpo": "El proyecto 'Atacama Solar' ha superado las expectativas de producción energética, logrando abastecer a más de 500 mil hogares.",
-      "fotos": ["/assets/resources/noticiaImagen3.jpg", "/assets/resources/noticiaImagen4.jpg"],
-      "direccion": "Desierto de Atacama, Chile"
+"2": {
+  "titulo": "Instalan nuevos paneles solares en escuela pública de San Miguel",
+  "tema": "Tecnología",
+  "autor": "Carlos Rivas",
+  "fecha": "2025-05-09",
+  "descripcion": "Una escuela primaria incorporó energía solar como parte de un plan sustentable.",
+  "cuerpo": "La Escuela N°25 de San Miguel ya funciona parcialmente con energía solar, gracias a un programa conjunto entre el municipio y una ONG ambiental.",
+  "fotos": [""],
+  "direccionNormalizada": ""
 },
-"3":{
-      "titulo": "Inauguran nueva línea de metro en Buenos Aires",
-      "tema": "Infraestructura",
-      "autor": "María Fernández",
-      "fecha": "2025-05-08",
-      "descripcion": "La nueva línea F conecta el centro con el barrio de Villa Crespo.",
-      "cuerpo": "Con una inversión superior a los 500 millones de dólares, la nueva línea busca reducir la congestión vehicular y mejorar la movilidad urbana.",
-      "fotos": ["/assets/resources/noticiaImagen5.jpg", "/assets/resources/noticiaImagen6.jpg"],
-      "direccion": "Buenos Aires, Argentina"
-      
+"3": {
+  "titulo": "Mejoras en la estación de tren de San Miguel",
+  "tema": "Infraestructura",
+  "autor": "María Fernández",
+  "fecha": "2025-05-08",
+  "descripcion": "Renuevan andenes, luminarias y accesos para personas con movilidad reducida.",
+  "cuerpo": "Las obras incluyen rampas, señalética moderna y nuevas cámaras de seguridad. Se espera que las reformas estén finalizadas para junio.",
+  "fotos": [""],
+  "direccionNormalizada": ""
 },
-"4":{
-      "titulo": "España elimina el uso de plásticos de un solo uso",
-      "tema": "Medio Ambiente",
-      "autor": "Laura Gómez",
-      "fecha": "2025-05-07",
-      "descripcion": "Una nueva ley prohíbe la fabricación y venta de plásticos desechables.",
-      "cuerpo": "La normativa contempla sanciones para quienes incumplan y promueve el uso de materiales biodegradables y reciclables.",
-      "fotos": ["/assets/resources/noticiaImagen7.jpg", "/assets/resources/noticiaImagen8.jpg"],
-      "direccion": "Madrid, España"
-      
+"4": {
+  "titulo": "Jóvenes de San Miguel crean campaña para reducir plásticos",
+  "tema": "Medio Ambiente",
+  "autor": "Laura Gómez",
+  "fecha": "2025-05-07",
+  "descripcion": "Estudiantes secundarios impulsan acciones para reducir el uso de plásticos en comercios.",
+  "cuerpo": "La campaña incluye entrega de bolsas reutilizables y charlas en colegios. Comercios locales ya se sumaron a la iniciativa.",
+  "fotos": [""],
+  "direccionNormalizada": ""
 },
-"5":{
-       "titulo": "NASA lanza satélite para estudiar clima extremo",
-      "tema": "Espacio",
-      "autor": "Juan Martínez",
-      "fecha": "2025-05-06",
-      "descripcion": "El nuevo satélite observará huracanes y tormentas desde la órbita terrestre.",
-      "cuerpo": "La misión busca mejorar los modelos meteorológicos y prever eventos climáticos severos con mayor precisión.",
-      "fotos": ["/assets/resources/noticiaImagen9.jpg", "/assets/resources/noticiaImagen10.jpg"],
-      "direccion": "Cabo Cañaveral, EE.UU."
-      
+"5": {
+  "titulo": "Nuevo radar meteorológico en San Miguel mejorará alertas tempranas",
+  "tema": "Espacio",
+  "autor": "Juan Martínez",
+  "fecha": "2025-05-06",
+  "descripcion": "Permitirá detectar tormentas con mayor precisión en el noroeste del conurbano.",
+  "cuerpo": "El radar fue instalado cerca del Parque El Zorzal y ya está en fase de prueba. Es parte del Plan Nacional de Monitoreo Climático.",
+  "fotos": [""],
+  "direccionNormalizada": ""
 },
-"6":{
-      "titulo": "Se celebra el Festival Internacional del Cine Independiente",
-      "tema": "Cultura",
-      "autor": "Elena Vázquez",
-      "fecha": "2025-05-05",
-      "descripcion": "Cientos de películas de todo el mundo fueron presentadas en el evento.",
-      "cuerpo": "El festival premió a las mejores producciones emergentes y abrió espacios de formación y diálogo entre creadores.",
-      "fotos": ["/assets/resources/noticiaImagen11.jpg", "/assets/resources/noticiaImagen12.jpg"],
-      "direccion": "Ciudad de México, México"
-      
+"6": {
+  "titulo": "San Miguel será sede de festival de teatro independiente",
+  "tema": "Cultura",
+  "autor": "Elena Vázquez",
+  "fecha": "2025-05-05",
+  "descripcion": "Grupos locales y de otros municipios se presentarán en distintos espacios culturales.",
+  "cuerpo": "El festival contará con más de 20 obras, talleres gratuitos y actividades para toda la familia en la plaza principal y centros culturales.",
+  "fotos": [""],
+  "direccionNormalizada": ""
 },
-"7":{
-       "titulo": "Se registra aumento de temperaturas en el hemisferio norte",
-      "tema": "Clima",
-      "autor": "Andrés Navarro",
-      "fecha": "2025-05-04",
-      "descripcion": "El aumento de temperaturas afecta la agricultura y la salud pública.",
-      "cuerpo": "Expertos alertan sobre el impacto de las olas de calor y recomiendan medidas preventivas.",
-      "fotos": ["/assets/resources/noticiaImagen13.jpg", "/assets/resources/noticiaImagen14.jpg"],
-      "direccion": "Toronto, Canadá"
-      
+"7": {
+  "titulo": "San Miguel enfrenta ola de calor inusual para el otoño",
+  "tema": "Clima",
+  "autor": "Andrés Navarro",
+  "fecha": "2025-05-04",
+  "descripcion": "La temperatura superó los 34°C, rompiendo récords históricos.",
+  "cuerpo": "El municipio recomendó evitar la exposición solar prolongada y reforzar la hidratación, especialmente en adultos mayores y niños.",
+  "fotos": [""],
+  "direccionNormalizada": ""
 },
-"8":{
-       "titulo": "Argentina gana el Sudamericano Sub-20 de fútbol",
-      "tema": "Deportes",
-      "autor": "Federico López",
-      "fecha": "2025-05-03",
-      "descripcion": "La selección argentina se coronó campeona tras vencer a Brasil en la final.",
-      "cuerpo": "Con un marcador de 3-2, el equipo juvenil mostró talento y disciplina, destacando la figura de su capitán.",
-      "fotos": ["/assets/resources/noticiaImagen15.jpg", "/assets/resources/noticiaImagen16.jpg"],
-      "direccion": "Montevideo, Uruguay"
-      
+"8": {
+  "titulo": "Club local de San Miguel asciende a la Primera B",
+  "tema": "Deportes",
+  "autor": "Federico López",
+  "fecha": "2025-05-03",
+  "descripcion": "El Club Atlético San Miguel logró el ascenso tras un torneo destacado.",
+  "cuerpo": "Con un estadio colmado, el equipo se impuso 2-0 ante Midland y selló su retorno a la B. La comunidad celebró con una caravana por las calles.",
+  "fotos": [""],
+  "direccionNormalizada": ""
 },
-"9":{
-      "titulo": "Lanzan aplicación para monitorear calidad del aire",
-      "tema": "Salud",
-      "autor": "Verónica Díaz",
-      "fecha": "2025-05-02",
-      "descripcion": "La app permite conocer los niveles de contaminación en tiempo real.",
-      "cuerpo": "Desarrollada por científicos en conjunto con el Ministerio de Salud, busca concientizar a la población sobre los efectos de la polución.",
-      "fotos": ["/assets/resources/noticiaImagen17.jpg", "/assets/resources/noticiaImagen18.jpg"],
-      "direccion": "Bogotá, Colombia"
-      
+"9": {
+  "titulo": "Lanzan app para reportar focos de contaminación en San Miguel",
+  "tema": "Salud",
+  "autor": "Verónica Díaz",
+  "fecha": "2025-05-02",
+  "descripcion": "La aplicación permite alertar sobre basurales, humo o ruidos molestos.",
+  "cuerpo": "Desarrollada por estudiantes de la UNSAM, la app busca involucrar a la ciudadanía en el control ambiental urbano.",
+  "fotos": ["g"],
+  "direccionNormalizada": ""
 },
-"10":{
-          "titulo": "Detectan nueva vulnerabilidad en dispositivos Android",
-      "tema": "Ciberseguridad",
-      "autor": "David Ramírez",
-      "fecha": "2025-05-01",
-      "descripcion": "Expertos advierten sobre un fallo crítico que afecta a millones de usuarios.",
-      "cuerpo": "La vulnerabilidad permite el acceso no autorizado a información sensible. Google ha prometido una actualización en los próximos días.",
-      "fotos": ["/assets/resources/noticiaImagen19.jpg", "/assets/resources/noticiaImagen20.jpg"],
-      "direccion": "San Francisco, EE.UU."
-      
+"10": {
+  "titulo": "Detectan intento de hackeo en red del municipio de San Miguel",
+  "tema": "Ciberseguridad",
+  "autor": "David Ramírez",
+  "fecha": "2025-05-01",
+  "descripcion": "Un ataque fue neutralizado a tiempo por el equipo de sistemas.",
+  "cuerpo": "Según informaron autoridades, el intento de ingreso no afectó datos sensibles. Se reforzarán los protocolos de seguridad informática.",
+  "fotos": [""],
+  "direccionNormalizada": ""
 },
-"11":{
-           "titulo": "Crece la inversión extranjera en energías renovables",
-      "tema": "Economía",
-      "autor": "Natalia Ruiz",
-      "fecha": "2025-04-30",
-      "descripcion": "Empresas internacionales apuestan por proyectos sostenibles en América Latina.",
-      "cuerpo": "Los países de la región ofrecen incentivos fiscales y recursos naturales que hacen atractiva la inversión en energía limpia.",
-      "fotos": ["/assets/resources/noticiaImagen21.jpg", "/assets/resources/noticiaImagen22.jpg"],
-      "direccion": "Santiago, Chile"
-      
+"11": {
+  "titulo": "Empresa extranjera invierte en parque industrial de San Miguel",
+  "tema": "Economía",
+  "autor": "Natalia Ruiz",
+  "fecha": "2025-04-30",
+  "descripcion": "La firma alemana GreenTech abrirá una planta de componentes electrónicos.",
+  "cuerpo": "La inversión generará más de 100 empleos y apunta a desarrollar tecnología para energías renovables en la región.",
+  "fotos": [""],
+  "direccionNormalizada": ""
 },
-"12":{
-        "titulo": "Lanzan programa de alfabetización digital para adultos mayores",
-      "tema": "Educación",
-      "autor": "Ricardo Paredes",
-      "fecha": "2025-04-29",
-      "descripcion": "El programa busca reducir la brecha digital y mejorar la inclusión.",
-      "cuerpo": "Se impartirán talleres gratuitos sobre uso de dispositivos, Internet y redes sociales.",
-      "fotos": ["/assets/resources/noticiaImagen23.jpg", "/assets/resources/noticiaImagen24.jpg"],
-      "direccion": "Quito, Ecuador"
-      
+"12": {
+  "titulo": "Nuevo programa de alfabetización digital en centros de jubilados",
+  "tema": "Educación",
+  "autor": "Ricardo Paredes",
+  "fecha": "2025-04-29",
+  "descripcion": "Iniciativa del municipio busca incluir digitalmente a los adultos mayores.",
+  "cuerpo": "El programa ofrece talleres semanales con dispositivos provistos por el estado local. Ya se sumaron más de 300 personas.",
+  "fotos": [""],
+  "direccionNormalizada": ""
 },
-"13":{
-      "titulo": "Hallan restos arqueológicos en las afueras de Cusco",
-      "tema": "Historia",
-      "autor": "Silvia Rojas",
-      "fecha": "2025-04-28",
-      "descripcion": "Un grupo de arqueólogos descubrió estructuras preincaicas.",
-      "cuerpo": "Los restos se encuentran en excelente estado y se cree que pertenecen a una cultura anterior a los incas.",
-      "fotos": ["/assets/resources/noticiaImagen25.jpg", "/assets/resources/noticiaImagen26.jpg"],
-      "direccion": "Cusco, Perú"
-      
+"13": {
+  "titulo": "Encuentran restos históricos en obra del centro de San Miguel",
+  "tema": "Historia",
+  "autor": "Silvia Rojas",
+  "fecha": "2025-04-28",
+  "descripcion": "Durante trabajos se hallaron objetos de valor arqueológico.",
+  "cuerpo": "El Instituto de Patrimonio Bonaerense estudia piezas de cerámica y herramientas que podrían ser del siglo XVIII.",
+  "fotos": [""],
+  "direccionNormalizada": ""
 },
-"14":{
-       "titulo": "Desarrollan vacuna contra nueva cepa de gripe aviar",
-      "tema": "Salud",
-      "autor": "Miguel Vargas",
-      "fecha": "2025-04-27",
-      "descripcion": "La vacuna mostró resultados prometedores en fase de pruebas.",
-      "cuerpo": "El Instituto Nacional de Salud ha confirmado que la vacuna será producida a gran escala durante los próximos meses.",
-      "fotos": ["/assets/resources/noticiaImagen27.jpg", "/assets/resources/noticiaImagen28.jpg"],
-      "direccion": "Buenos Aires, Argentina"
-
-      
+"14": {
+  "titulo": "Hospital Larcade aplicará vacuna experimental contra gripe aviar",
+  "tema": "Salud",
+  "autor": "Miguel Vargas",
+  "fecha": "2025-04-27",
+  "descripcion": "El hospital fue seleccionado como sede para pruebas clínicas.",
+  "cuerpo": "Se aplicará la vacuna a voluntarios bajo estrictos controles. El estudio cuenta con aval nacional e internacional.",
+  "fotos": [""],
+  "direccionNormalizada": ""
 },
-"15":{
-                  "titulo": "Crece la producción de vehículos eléctricos en Brasil",
-      "tema": "Industria",
-      "autor": "Ana Pereira",
-      "fecha": "2025-04-26",
-      "descripcion": "Nuevas fábricas apuestan por tecnología sostenible.",
-      "cuerpo": "El gobierno ha lanzado una serie de incentivos para fomentar la industria automotriz verde, atrayendo inversiones extranjeras.",
-      "fotos": ["/assets/resources/noticiaImagen29.jpg", "/assets/resources/noticiaImagen30.jpg"],
-      "direccion": "São Paulo, Brasil"
+"15": {
+  "titulo": "San Miguel suma nuevos puntos de carga para autos eléctricos",
+  "tema": "Industria",
+  "autor": "Ana Pereira",
+  "fecha": "2025-04-26",
+  "descripcion": "El municipio apuesta por la movilidad sustentable.",
+  "cuerpo": "Ya funcionan cinco cargadores públicos en puntos estratégicos del distrito. La medida busca acompañar el crecimiento del parque automotor eléctrico.",
+  "fotos": [""],
+  "direccionNormalizada": ""
 }
+
 
 };
 const noticiaArray = Object.values(diccionarioNoticias);

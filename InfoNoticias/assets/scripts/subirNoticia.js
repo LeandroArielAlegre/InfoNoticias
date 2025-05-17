@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    insertarEnFormularioImagenesDisponibles();
     mostrarDeFormularioDeDireccion();
     formularioDeDireccionNormalizada();
     seleccionarDireccionValida();
@@ -43,11 +44,22 @@ function obtenerCamposFormularioNoticia() {
     const cuerpo = $("#cuerpoNoticia").val();
     const direccionNormalizada = $("#direccionNormalizadaNoticia").val();
     // const fotos = $("#imagenesNoticia").val();
-
-    const noticia = { titulo, tema, autor, fecha, descripcion, cuerpo, direccionNormalizada };
+    const fotos = $('#imagenNoticia').val();
+    const noticia = { titulo, tema, autor, fecha, descripcion, cuerpo,fotos, direccionNormalizada };
     return noticia;
 
 }
+function insertarEnFormularioImagenesDisponibles(){
+    const cantidadDeImagenes = 5; 
+  const select = $('#imagenNoticia');
+  for (let i = 1; i <= cantidadDeImagenes; i++) {
+    const ruta = `img${i}.jpg`;
+    const opcion = `<option value="${ruta}">Imagen ${i}</option>`;
+    select.append(opcion);
+  }
+}
+
+
 function mostrarDeFormularioDeDireccion() {
     $('input[name="existeDireccion"]').change(function () {
         if ($(this).is(':checked')) {
@@ -70,6 +82,9 @@ function formularioDeDireccionNormalizada() {
         if (validarCamposDireccion(direccion)) {
             obtenerDireccionNormalizada(direccion)
                 .then(listaDeDireccionesNormalizadas => {
+                    if(listaDeDireccionesNormalizadas.length == 0){
+                        alert("Error: No se encontraron direcciones normalizadas");
+                    }
                     let listaDeDirecciones = listaDeDireccionesNormalizadas;
                    agregarDireccionesValidas(listaDeDirecciones);
                 });

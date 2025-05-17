@@ -1,7 +1,6 @@
 
 $(document).ready(function(){
     colocarNoticias();
-    obtenerCoordenadasDeUbicacion();
 
 
 })
@@ -17,7 +16,23 @@ function colocarNoticias(){
         $("#map").show();
         colocarMapa();
     }
+    colocarImagenes(noticia.fotos);
+   
 
+}
+
+function colocarImagenes(fotos) {
+    if (fotos && fotos.filter(f => f.trim() !== "").length) {
+    $("#imagenesNoticia").show();
+    $("#imagenesNoticia").empty();
+    fotos.forEach(foto => {
+        if (foto.trim() !== "") {
+            $("#imagenesNoticia").append(`<img src="../../assets/resources/image/${foto}" alt="imagen de la noticia">`);
+        }
+    });
+    } else {
+        $("#imagenesNoticia").hide().empty();
+    }
 }
 
 

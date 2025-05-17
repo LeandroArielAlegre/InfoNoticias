@@ -19,6 +19,18 @@
 
 }
 
+
+#imagenesNoticia img{
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 150px;
+    height: 150px;
+}
+
 footer{
     display: flex;
     justify-content: center;
