@@ -1,43 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../..//assets/css/noticia.css">
     <link rel="stylesheet" href="../..//assets/css/nav.css">
-    <link rel="stylesheet" href="../..//assets/css/card.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />   
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
-     <script src="../..//assets/scripts/data.js"></script>
-     <script src="../..//assets/scripts/colocarNoticia.js" defer></script>
+    <script src="../..//assets/scripts/data.js"></script>
+    <script src="../..//assets/scripts/colocarNoticia.js" defer></script>
     <title>Noticia</title>
 </head>
-<body>
+
+<body id=cuerpo>
     <nav>
         <ul>
             <li><a href="../../index.html">Inicio</a></li>
             <li><a href="../..//assets/pages/subirNoticia.html">Subir noticia</a></li>
         </ul>
-
     </nav>
     <div class="contendedor">
-       <div class="noticia">
-             <h1 id="tituloNoticia">TITULO</h1>
-             <h3 id="temaNoticia">Tema</h3>
-             <h3 id="descripcionNoticia">DESCRIPCION</h3>
-             <p id="cuerpoNoticia">CUERPO</p>
-             <div id="imagenesNoticia" display="none"> </div>
-             <div id="map" style="display: none;"> </div>
-       </div>
-
+        <div class="noticia">
+            <h1 id="tituloNoticia">TITULO</h1>
+            <h2 id="temaNoticia">Tema</h2>
+            <h3 id="descripcionNoticia">DESCRIPCION</h3>
+            <p id="cuerpoNoticia">CUERPO</p>
+            <div id="imagenesNoticia" display="none"> </div>
+            <div id="map" style="display: none;"> </div>
+        </div>
     </div>
-
 
     <footer>
         <h1>DERECHOS RESERVADOS </h1>
-
     </footer>
 
 </body>
+
 </html>

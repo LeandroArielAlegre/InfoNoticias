@@ -2,17 +2,22 @@
     font-family: sans-serif;
 }
 
-
-.contendedor{
+.contendedor {
     display: flex;
+    background-color: rgba(255, 255, 255, 0.6);
     justify-content: center;
+    text-align: center;
     align-items: center;
     box-shadow: 1px 2px 1px 0px black;
     border-radius: 10px;
     flex-direction: column;
 
 }
-
+body {
+    background-image: url("../resources/image/maxresdefault.jpg");
+    background-size: 250px;
+    background-position: center;
+}
 .contendedor .listadoNoticias{
     display: flex;
     justify-content: center;
@@ -22,10 +27,9 @@
     padding: 20px;
 }
 
-
 footer{
     display: flex;
     justify-content: center;
     align-items: center;
-
+    color: white;
 }
