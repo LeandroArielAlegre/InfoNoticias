@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="assets/css/card.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="assets/scripts/data.js"></script>
-   <script src="assets/scripts/cargarNoticias.js"></script>
+    <script src="assets/scripts/cargarNoticias.js"></script>
     <title>InfoNoticias</title>
 </head>
 
@@ -23,7 +23,28 @@
 
     </nav>
     <div class="contendedor">
-        <h1>TODAS LAS NOTICIAS</h1>
+        <h1>LAS NOTICIAS</h1>
+        <div>
+            <form id="formularioFiltrado">
+             <select id="filtroTema">
+                <option value="" disabled selected>Selecciona un tema</option>
+                  <option value="todos" selected>Todos los temas</option>
+                    <option value="Cultura">Cultura</option>
+                    <option value="Tecnología">Tecnología</option>
+                    <option value="Infraestructura">Infraestructura</option>
+                    <option value="Medio Ambiente">Medio Ambiente</option>
+                    <option value="Clima">Clima</option>
+                    <option value="Deportes">Deportes</option>
+                    <option value="Salud">Salud</option>
+                    <option value="Economía">Economía</option>
+                    <option value="Educación">Educación</option>
+                    <option value="Historia">Historia</option>
+            </select>
+            <input type="submit" value="Filtrar">
+            </form>
+            
+
+        </div>
         <div class="listadoNoticias">
 
 

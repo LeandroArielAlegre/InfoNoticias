@@ -1,12 +1,12 @@
-
+var noticias = Object.entries(diccionarioNoticias);
 $(document).ready(function(){ 
-    leerJson();
+    leerDiccionarioNoticias(noticias);
+    filtrarNoticias();
 })
 
 
 
-function leerJson(){
-     const noticias = Object.entries(diccionarioNoticias);
+function leerDiccionarioNoticias(noticias){
      colocarNoticias(noticias)
     
 }
@@ -14,10 +14,11 @@ function leerJson(){
 
 function colocarNoticias(noticias){
      const listadoNoticias = $(".listadoNoticias");
+     listadoNoticias.empty();
     noticias.forEach(([id,noticia]) => {
        const card = 
         $("<div class='card'>").html(`
-            <img src="assets/resources/image/img1.jpg" alt="imagen de la noticia">
+            <img src="assets/resources/image/img${noticia.fotos[0]}.jpg" alt="imagen de la noticia">
             <h2>${noticia.titulo}</h2>
             <p>${noticia.descripcion}</p>
             <button class="boton">Leer más</button>
@@ -28,6 +29,20 @@ function colocarNoticias(noticias){
 
 }
 
+function filtrarNoticias(){
+     $("#formularioFiltrado").submit(function(e) {
+        e.preventDefault(); // Evita recarga de la página
+
+        const temaSeleccionado = $("#filtroTema").val(); 
+        
+        if (temaSeleccionado === "todos" || !temaSeleccionado) {
+            colocarNoticias(noticias);
+        } else {
+            const filtradas = noticias.filter(([id, noticia]) => noticia.tema === temaSeleccionado);
+            colocarNoticias(filtradas);
+        }
+    });
+}
 
 function redirigirYGuardarNoticiaEnLocalStorage(noticia){
     localStorage.setItem("noticia", JSON.stringify(noticia));

@@ -28,7 +28,19 @@
             <form id="registrarNoticia">
                 <h1>Formulario de noticia</h1>
                 <input type="text" id="tituloNoticia" required name="tituloNoticia" placeholder="Titulo de la noticia">
-                <input type="text" id="temaNoticia" required name="temaNoticia" placeholder="Tema de la noticia">
+                <select id="temaNoticia" name="temaNoticia" required>
+                    <option value="" disabled selected>Selecciona un tema</option>
+                    <option value="Cultura">Cultura</option>
+                    <option value="Tecnología">Tecnología</option>
+                    <option value="Infraestructura">Infraestructura</option>
+                    <option value="Medio Ambiente">Medio Ambiente</option>
+                    <option value="Clima">Clima</option>
+                    <option value="Deportes">Deportes</option>
+                    <option value="Salud">Salud</option>
+                    <option value="Economía">Economía</option>
+                    <option value="Educación">Educación</option>
+                    <option value="Historia">Historia</option>
+                </select>
                 <input type="text" id="autorNoticia" required name="autorNoticia" placeholder="Autor de la noticia">
                 <input type="text" id="fechaNoticia" required name="fechaNoticia" placeholder="Fecha de la noticia">
                 <textarea class="textareaDescripcion" id="descripcionNoticia" required name="descripcionNoticia"
@@ -38,22 +50,23 @@
                 <select id="imagenNoticia" multiple size="3" placeholder="Imágenes de la noticia"></select>
                 <label><input type="checkbox" name="existeDireccion" value="1"> ¿Tienes una direccion?</label>
                 <br>
-                <input type="text" id="direccionNormalizadaNoticia" name="direccionNormalizadaNoticia" placeholder="Direccion normalizada de la noticia" style="display:none;">
+                <input type="text" id="direccionNormalizadaNoticia" name="direccionNormalizadaNoticia"
+                    placeholder="Direccion normalizada de la noticia" style="display:none;">
                 <input type="submit" value="Registrar">
             </form>
 
-              <form id="buscarDireccion">
-                    <div class="direccionNoticia" style="display: none;">
-                        <input type="text" id="calleNoticia" required name="calleNoticia" placeholder="Calle">
-                        <input type="text" id="alturaNoticia" required name="alturaNoticia" placeholder="Altura">
-                        <input type="submit" value="Buscar">
-                    </div>
-                </form>
-
-                <div class="direcciones">
-                  <!-- <li><button type="button" class="boton-opcion">Cras justo odio</button></li>-->
-                    
+            <form id="buscarDireccion">
+                <div class="direccionNoticia" style="display: none;">
+                    <input type="text" id="calleNoticia" required name="calleNoticia" placeholder="Calle">
+                    <input type="text" id="alturaNoticia" required name="alturaNoticia" placeholder="Altura">
+                    <input type="submit" value="Buscar">
                 </div>
+            </form>
+
+            <div class="direcciones">
+                <!-- <li><button type="button" class="boton-opcion">Cras justo odio</button></li>-->
+
+            </div>
 
 
 
