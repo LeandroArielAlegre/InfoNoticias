@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    insertarEnFormularioImagenesDisponibles();
+    //insertarEnFormularioImagenesDisponibles();
     mostrarDeFormularioDeDireccion();
     formularioDeDireccionNormalizada();
     seleccionarDireccionValida();
@@ -43,12 +43,43 @@ function obtenerCamposFormularioNoticia() {
     const descripcion = $("#descripcionNoticia").val();
     const cuerpo = $("#cuerpoNoticia").val();
     const direccionNormalizada = $("#direccionNormalizadaNoticia").val();
-    // const fotos = $("#imagenesNoticia").val();
-    const fotos = $('#imagenNoticia').val();
+     //const fotos = $("#imagenesNoticia").val();
+   const fotos = $('#imagenNoticia').val();
     const noticia = { titulo, tema, autor, fecha, descripcion, cuerpo,fotos, direccionNormalizada };
     return noticia;
-
 }
+
+function eliminarImagenesDelLocalStorage() {
+  const clavesAEliminar = [];
+
+  for (let i = 0; i < localStorage.length; i++) {
+    const clave = localStorage.key(i);
+    if (clave.startsWith("imagen_")) {
+      clavesAEliminar.push(clave);
+    }
+  }
+
+  clavesAEliminar.forEach(clave => localStorage.removeItem(clave));
+}
+
+function guardarImagenesEnLocalStorage() {
+
+    eliminarImagenesDelLocalStorage();
+  const archivos = $("#imagenNoticia")[0].files;
+
+  if (archivos.length === 0) return;
+
+  for (let i = 0; i < archivos.length; i++) {
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      const base64 = e.target.result;
+      const clave = `imagen_${Date.now()}_${i}`;
+      localStorage.setItem(clave, base64);
+    };
+    reader.readAsDataURL(archivos[i]);
+  }
+}
+/*
 function insertarEnFormularioImagenesDisponibles(){
     const cantidadDeImagenes = 6; 
   const select = $('#imagenNoticia');
@@ -57,7 +88,7 @@ function insertarEnFormularioImagenesDisponibles(){
     const opcion = `<option value="${ruta}">Imagen ${i}</option>`;
     select.append(opcion);
   }
-}
+}*/
 
 
 function mostrarDeFormularioDeDireccion() {
@@ -183,6 +214,7 @@ function validarDireccionesCalleYAltura(data) {
 
 
 function redirigirYGuardarNoticiaEnLocalStorage(noticia) {
+    guardarImagenesEnLocalStorage();
     localStorage.setItem("noticia", JSON.stringify(noticia));
     window.location.href = "../../assets/pages/noticia.html";
 }
