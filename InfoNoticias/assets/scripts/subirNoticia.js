@@ -50,7 +50,7 @@ function obtenerCamposFormularioNoticia() {
 
 }
 function insertarEnFormularioImagenesDisponibles(){
-    const cantidadDeImagenes = 5; 
+    const cantidadDeImagenes = 6; 
   const select = $('#imagenNoticia');
   for (let i = 1; i <= cantidadDeImagenes; i++) {
     const ruta = `img${i}.jpg`;

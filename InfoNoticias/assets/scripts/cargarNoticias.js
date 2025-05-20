@@ -22,6 +22,7 @@ function colocarNoticias(noticias){
             <h2>${noticia.titulo}</h2>
             <p>${noticia.descripcion}</p>
             <button class="boton">Leer más</button>
+            <p id = tema>${noticia.tema}</p>
         `);
         card.find(".boton").click(() => redirigirYGuardarNoticiaEnLocalStorage(noticia));
         listadoNoticias.append(card);
