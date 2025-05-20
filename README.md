@@ -12,6 +12,6 @@ No se requiere disponer de un liveserver para ver la pagina. Basta con abrir el 
 
 
 ## Autores
-Leandro Pagnat
-Leandro Alegre
+Leandro Pagnat,
+Leandro Alegre,
 Dante Melhado
