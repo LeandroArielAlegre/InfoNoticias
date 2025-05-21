@@ -1,23 +1,23 @@
 var noticias = Object.entries(diccionarioNoticias);
-$(document).ready(function(){ 
+$(document).ready(function () {
     leerDiccionarioNoticias(noticias);
     filtrarNoticias();
 })
 
 
 
-function leerDiccionarioNoticias(noticias){
-     colocarNoticias(noticias)
-    
+function leerDiccionarioNoticias(noticias) {
+    colocarNoticias(noticias)
+
 }
 
 
-function colocarNoticias(noticias){
-     const listadoNoticias = $(".listadoNoticias");
-     listadoNoticias.empty();
-    noticias.forEach(([id,noticia]) => {
-       const card = 
-        $("<div class='card'>").html(`
+function colocarNoticias(noticias) {
+    const listadoNoticias = $(".listadoNoticias");
+    listadoNoticias.empty();
+    noticias.forEach(([id, noticia]) => {
+        const card =
+            $("<div class='card'>").html(`
             <img src="assets/resources/image/img${noticia.fotos[0]}.jpg" alt="imagen de la noticia">
             <h2>${noticia.titulo}</h2>
             <p>${noticia.descripcion}</p>
@@ -30,12 +30,12 @@ function colocarNoticias(noticias){
 
 }
 
-function filtrarNoticias(){
-     $("#formularioFiltrado").submit(function(e) {
+function filtrarNoticias() {
+    $("#formularioFiltrado").submit(function (e) {
         e.preventDefault(); // Evita recarga de la página
 
-        const temaSeleccionado = $("#filtroTema").val(); 
-        
+        const temaSeleccionado = $("#filtroTema").val();
+
         if (temaSeleccionado === "todos" || !temaSeleccionado) {
             colocarNoticias(noticias);
         } else {
@@ -45,7 +45,7 @@ function filtrarNoticias(){
     });
 }
 
-function redirigirYGuardarNoticiaEnLocalStorage(noticia){
+function redirigirYGuardarNoticiaEnLocalStorage(noticia) {
     localStorage.setItem("noticia", JSON.stringify(noticia));
     window.location.href = "assets/pages/noticia.html";
 }

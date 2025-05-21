@@ -1,7 +1,8 @@
 * {
     font-family: sans-serif;
 }
-nav{
+
+nav {
 
     display: flex;
     justify-content: center;
@@ -9,18 +10,19 @@ nav{
     width: 100%;
     text-decoration: none;
     background-color: rgba(131, 173, 212, 0.596);
-    margin:auto;
+    margin: auto;
     border-radius: 16px;
     border: solid rgba(0, 68, 255, 0.39);
     border-width: 1px;
 }
 
-nav ul{
+nav ul {
     display: flex;
     justify-content: center;
     align-items: center;
     list-style: none;
 }
+
 nav ul li {
     background-color: rgba(255, 255, 255, 0.6);
     border-radius: 25px;
@@ -30,6 +32,6 @@ nav ul li {
     font-weight: bold;
 }
 
-nav ul li a{
+nav ul li a {
     text-decoration: none;
 }
