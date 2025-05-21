@@ -1,3 +1,5 @@
+const USIG_API_URL = "http://servicios.usig.buenosaires.gob.ar/normalizar/?direccion=";
+
 $(document).ready(function () {
     //insertarEnFormularioImagenesDisponibles();
     mostrarDeFormularioDeDireccion();
@@ -136,12 +138,13 @@ function seleccionarDireccionValida() {
     $(".direcciones").on("click", ".boton-opcion", function () {
         const direccionNormalizada = $(this).text();
         guardarDireccionSeleccionada(direccionNormalizada);
+        //guardarDireccionUnicaConCoordenadas(direccionNormalizada);
         $("#direccionNormalizadaNoticia").val(direccionNormalizada);
     })
 }
 
 function guardarDireccionSeleccionada(direccionNormalizada) {
-    fetch("http://servicios.usig.buenosaires.gob.ar/normalizar/?direccion=" + direccionNormalizada).
+    fetch(USIG_API_URL + direccionNormalizada).
         then(response => {
             if (!response.ok) {
                 throw new Error("Error en la respuesta del servidor");
@@ -155,26 +158,28 @@ function guardarDireccionSeleccionada(direccionNormalizada) {
         })
 }
 
+
+
 function limpiarDireccionesValidas() {
     $(".direcciones").empty();
 }
 
 
 function obtenerCamposFormularioDireccion() {
-    const calle = $("#calleNoticia").val();
-    const altura = $("#alturaNoticia").val();
-    return direccion = { calle, altura };
+    //const calle = $("#direccion").val();
+    // const altura = $("#alturaNoticia").val();
+    return direccion = $("#direccion").val();
 }
 
 function validarCamposDireccion(direccion) {
-    if (direccion.calle.length > 0 && direccion.altura.length > 0) {
+    if (direccion.length > 0) {
         return true;
     }
     return false
 }
 
 function obtenerDireccionNormalizada(direccion) {
-    return fetch("http://servicios.usig.buenosaires.gob.ar/normalizar/?direccion=" + direccion.calle + " " + direccion.altura)
+    return fetch(USIG_API_URL + direccion)
         .then(response => {
             if (!response.ok) {
                 throw new Error("Error en la respuesta del servidor");
@@ -196,11 +201,48 @@ function obtenerDireccionNormalizada(direccion) {
         });
 }
 
+// PROOF OF CONCEPT - ITERAR HASTA OBTENER JSON CON UN SOLO RESULTADO
+async function guardarDireccionUnicaConCoordenadas(direccionNormalizada) {
+    try {
+        const primeraRespuesta = await fetch(USIG_API_URL + direccionNormalizada);
+        if (!primeraRespuesta.ok) throw new Error("Error en la respuesta del servidor");
+
+        const datos = await primeraRespuesta.json();
+        const direcciones = datos.direccionesNormalizadas;
+
+        if (!direcciones || direcciones.length === 0) {
+            throw new Error("No se encontraron direcciones normalizadas");
+        }
+
+        for (const direccion of direcciones) {
+            const nuevaDireccion = direccion.direccion;
+
+            const respuesta = await fetch(USIG_API_URL + nuevaDireccion);
+            if (!respuesta.ok) continue;
+
+            const datosNorm = await respuesta.json();
+            const resultados = datosNorm.direccionesNormalizadas;
+
+            if (resultados && resultados.length === 1 && resultados[0].coordenadas) {
+                // 🎯 Found it
+                console.log("Dirección única con coordenadas:", resultados[0]);
+                localStorage.setItem("ubicacion", JSON.stringify(resultados[0]));
+                return;
+            }
+        }
+
+        console.warn("No se encontró una dirección única con coordenadas.");
+    } catch (error) {
+        console.error("Error durante la búsqueda de dirección:", error);
+    }
+}
+
+
 function validarDireccionesCalleYAltura(data) {
     let listaDeDireccionesNormalizadas = [];
     if (data.direccionesNormalizadas.length > 0) {
         for (let i = 0; i < data.direccionesNormalizadas.length; i++) {
-            if (data.direccionesNormalizadas[i].tipo == "calle_altura") {
+            if (data.direccionesNormalizadas[i].tipo == "calle_altura" || data.direccionesNormalizadas[i].tipo == "calle_y_calle") {
                 listaDeDireccionesNormalizadas.push(data.direccionesNormalizadas[i]);
             }
         }
