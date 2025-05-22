@@ -68,8 +68,8 @@ function colocarMapa() {
 function obtenerCoordenadasDeUbicacion() {
     const ubicacion = JSON.parse(localStorage.getItem("ubicacion"));
     const coordenadas = {
-        x: ubicacion.direccionesNormalizadas[0].coordenadas.x,
-        y: ubicacion.direccionesNormalizadas[0].coordenadas.y
+        x: ubicacion.coordenadas.x,
+        y: ubicacion.coordenadas.y
     };
     return coordenadas;
 }

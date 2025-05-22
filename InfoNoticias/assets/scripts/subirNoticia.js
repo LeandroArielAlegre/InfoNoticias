@@ -79,24 +79,13 @@ function guardarImagenesEnLocalStorage() {
         reader.readAsDataURL(archivos[i]);
     }
 }
-/*
-function insertarEnFormularioImagenesDisponibles(){
-    const cantidadDeImagenes = 6; 
-  const select = $('#imagenNoticia');
-  for (let i = 1; i <= cantidadDeImagenes; i++) {
-    const ruta = `img${i}.jpg`;
-    const opcion = `<option value="${ruta}">Imagen ${i}</option>`;
-    select.append(opcion);
-  }
-}*/
-
 
 function mostrarDeFormularioDeDireccion() {
     $('input[name="existeDireccion"]').change(function () {
         if ($(this).is(':checked')) {
             $(".direccionNoticia").show();
             $("#direccionNormalizadaNoticia").show();
-            $("#direccionNormalizadaNoticia").prop("disabled", true);
+            
         }
         if (!$(this).is(':checked')) {
             $(".direccionNoticia").hide();
@@ -116,43 +105,33 @@ function formularioDeDireccionNormalizada() {
                     if (listaDeDireccionesNormalizadas.length == 0) {
                         alert("Error: No se encontraron direcciones normalizadas");
                     }
-                    let listaDeDirecciones = listaDeDireccionesNormalizadas;
-                    agregarDireccionesValidas(listaDeDirecciones);
+                    if (listaDeDireccionesNormalizadas.length > 1) {
+                        alert("Hay mas de una direccion con el mismo nombre, se mas especifico colocando la localidad");
+                        $("#localidadNoticia").show();
+                    }
+                     if (listaDeDireccionesNormalizadas.length == 1) {
+                        const direccionNormalizada = listaDeDireccionesNormalizadas;
+                        localStorage.setItem("ubicacion", JSON.stringify(direccionNormalizada[0]));
+                         agregarDireccionValida(direccionNormalizada);
+                     }
                 });
         }
     })
 }
-function agregarDireccionesValidas(listaDeDirecciones) {
-    if (listaDeDirecciones) {
+function agregarDireccionValida(direccionNormalizada) {
+    if (direccionNormalizada) {
         const direcciones = $(".direcciones");
-        for (let i = 0; i < listaDeDirecciones.length; i++) {
-            const itemDireccion = (`<li><button type="button" class="boton-opcion">${listaDeDirecciones[i].direccion}</button></li>`)
-            direcciones.append(itemDireccion);
-        }
+        const itemDireccion = (`<li><button type="button" class="boton-opcion">${direccionNormalizada[0].direccion}</button></li>`)
+        direcciones.append(itemDireccion);
+        
     }
 }
 
 function seleccionarDireccionValida() {
     $(".direcciones").on("click", ".boton-opcion", function () {
         const direccionNormalizada = $(this).text();
-        guardarDireccionSeleccionada(direccionNormalizada);
         $("#direccionNormalizadaNoticia").val(direccionNormalizada);
     })
-}
-
-function guardarDireccionSeleccionada(direccionNormalizada) {
-    fetch("http://servicios.usig.buenosaires.gob.ar/normalizar/?direccion=" + direccionNormalizada).
-        then(response => {
-            if (!response.ok) {
-                throw new Error("Error en la respuesta del servidor");
-            }
-            return response.json();
-        }).then(data => {
-            console.log(data);
-            localStorage.setItem("ubicacion", JSON.stringify(data));
-        }).catch(error => {
-            console.error("Error al obtener la dirección normalizada:", error);
-        })
 }
 
 function limpiarDireccionesValidas() {
@@ -163,18 +142,20 @@ function limpiarDireccionesValidas() {
 function obtenerCamposFormularioDireccion() {
     const calle = $("#calleNoticia").val();
     const altura = $("#alturaNoticia").val();
-    return direccion = { calle, altura };
+    const localidad = $("#localidadNoticia").val();
+    return direccion = { calle, altura , localidad};
 }
 
 function validarCamposDireccion(direccion) {
     if (direccion.calle.length > 0 && direccion.altura.length > 0) {
+        console.log(direccion.localidad);
         return true;
     }
     return false
 }
 
 function obtenerDireccionNormalizada(direccion) {
-    return fetch("http://servicios.usig.buenosaires.gob.ar/normalizar/?direccion=" + direccion.calle + " " + direccion.altura)
+    return fetch("http://servicios.usig.buenosaires.gob.ar/normalizar/?direccion=" + direccion.calle + " " + direccion.altura + ", " + direccion.localidad)
         .then(response => {
             if (!response.ok) {
                 throw new Error("Error en la respuesta del servidor");
@@ -186,6 +167,7 @@ function obtenerDireccionNormalizada(direccion) {
                 return validarDireccionesCalleYAltura(data);
             } else {
                 alert("Error: No se encontraron direcciones normalizadas");
+                return [];
             }
 
         })
@@ -206,9 +188,6 @@ function validarDireccionesCalleYAltura(data) {
         }
 
         return listaDeDireccionesNormalizadas;
-
-    } else {
-        return "";
     }
 }
 
