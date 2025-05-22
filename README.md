@@ -37,7 +37,8 @@ Prototipo de portal web de noticias. El proyecto cuenta con funciones de interac
 ## Ejecución
 No se requiere disponer de un liveserver para ver la pagina. Basta con abrir el archivo index.html en su navegador web de preferencia.
 
-##Codigo
+## Codigo
+
 
 
 ## Autores
