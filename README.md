@@ -90,8 +90,8 @@ Recursos gráficos: múltiples imágenes PNG y JPG en recusos y recusos/imagenes
 
 ---
 
-## 7. Normalización de Direcciones (Simulado)
-- Formularios e interfaces gráficas que representan una futura integración con APIs de geolocalización o normalización de direcciones.
+## 7. Normalización de Direcciones
+- Formularios e interfaces gráficas que representan una integración con APIs de geolocalización o normalización de direcciones.
 
 ---
 
